@@ -1,0 +1,26 @@
+{
+  "name": "react-app-using-mern",
+  "version": "1.0.0",
+  "description": "Learning to use MERN stack",
+  "main": "webapp.js",
+  "scripts": {
+    "test": "return 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mash36/React-app-MERN.git"
+  },
+  "keywords": [
+    "\"react\"",
+    "\"mern\""
+  ],
+  "author": "Md Mashiur Rahman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mash36/React-app-MERN/issues"
+  },
+  "homepage": "https://github.com/Mash36/React-app-MERN#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
