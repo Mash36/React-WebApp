@@ -74,14 +74,18 @@ var BugAdd = React.createClass({
 	}
 });
 
+/*
+getting rid of global bug data, since we'll be getting this from server now.
+
 var bugData = [
   {id: 1, priority: 'P1', status:'Open', owner:'Ravan', title:'App crashes on open'},
   {id: 2, priority: 'P2', status:'New', owner:'Eddie', title:'Misaligned border on panel'},
 ];
+*/
 
 var BugList = React.createClass({
   getInitialState: function() {
-    return {bugs: bugData};
+    return {bugs: []};
   },
   render: function() {
     console.log("Rendering bug list, num items:", this.state.bugs.length);
@@ -98,18 +102,34 @@ var BugList = React.createClass({
     )
   },
 
-  testNewBug: function() {
+  componentDidMount: function(){
+  	$.ajax('/api/bugs').done(function(data){
+  		this.setState({bugs: data});
+  	}.bind(this));
+  	// In production, we'd also handle errors.
+  },
+
+/*
+  	testNewBug: function() {
     var nextId = this.state.bugs.length + 1;
     this.addBug({id: nextId, priority: 'P2', status:'New', owner:'Pieta', title:'Warning on console'})
   },
+*/
 
   addBug: function(bug) {
     console.log("Adding bug:", bug);
-    // We're advised not to modify the state, it's immutable. So, make a copy.
-    var bugsModified = this.state.bugs.slice();
-    bug.id = this.state.bugs.length + 1;
-    bugsModified.push(bug);
-    this.setState({bugs: bugsModified});
+    $.ajax({
+    	type: 'POST', url: '/api/bugs', contentType: 'appication/json',
+    	data: JSON.stringify(bug),
+    	success: function(data){
+    		var bug = data;
+    		var bugsModified = this.state.bugs.concat(bug);
+    		this.setState({bugs: bugsModified});
+    	}.bind(this),
+    	error: function(xhr,status,err){
+    		console.log("Error adding bug:", err);
+    	}
+    });
   }
 });
 

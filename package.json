@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Mash36/React-app-MERN#readme",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.15.2"
   },
   "devDependencies": {
