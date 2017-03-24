@@ -21,12 +21,19 @@
   },
   "homepage": "https://github.com/Mash36/React-app-MERN#readme",
   "dependencies": {
+    "babelify": "^7.3.0",
     "body-parser": "^1.17.1",
+    "browserify": "^14.1.0",
     "express": "^4.15.2",
-    "mongodb": "^2.2.25"
+    "gulp": "^3.9.1",
+    "jquery": "^3.2.1",
+    "mongodb": "^2.2.25",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.9.0"
   },
   "devDependencies": {
     "babel-preset-react": "^6.23.0"
   }
 }
-
