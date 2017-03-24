@@ -4,7 +4,7 @@
   "description": "Learning to use MERN stack",
   "main": "webapp.js",
   "scripts": {
-    "test": "return 0"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "homepage": "https://github.com/Mash36/React-app-MERN#readme",
   "dependencies": {
     "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.23.0"
   }
 }
