@@ -9,8 +9,6 @@ app.use(express.static('static')); // express.static built-in middleware functio
 //Pass the name of the directory that contains the static assets to the 
 //express.static middleware function to start serving the files directly.
 
-
-
 // in the web server, create an endpoint /api/bugs
 app.get('/api/bugs', function(req,res){
 	db.collection("bugs").find().toArray(function(err,docs){

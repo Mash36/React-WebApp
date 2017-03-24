@@ -47,6 +47,7 @@ var BugTable = React.createClass({
   }
 });
 
+
 var BugAdd = React.createClass({
   render: function() {
     console.log("Rendering BugAdd");
