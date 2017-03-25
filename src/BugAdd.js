@@ -3,7 +3,7 @@ var ReactDOM = require('react-dom');
 
 var BugAdd = React.createClass({
   render: function() {
-    console.log("Rendering BugAdd");
+    //console.log("Rendering BugAdd");
     return (
       <div>
         <form name="bugAdd">
@@ -14,7 +14,7 @@ var BugAdd = React.createClass({
       </div>
     )
   },
-
+//
   handleSubmit: function(e) {
     e.preventDefault();
     var form = document.forms.bugAdd;
