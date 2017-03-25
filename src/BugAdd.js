@@ -14,7 +14,7 @@ var BugAdd = React.createClass({
       </div>
     )
   },
-//
+
   handleSubmit: function(e) {
     e.preventDefault();
     var form = document.forms.bugAdd;
